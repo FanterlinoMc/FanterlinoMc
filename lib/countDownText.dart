@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'dart:math';
 
 import 'package:assets_audio_player/assets_audio_player.dart';
@@ -67,7 +69,6 @@ class _CountdownTextState extends State<CountdownText>
   }
 
   bool _isCountingDown() =>
-      widget.secondsToNewYear != null &&
       widget.secondsToNewYear <= 9 &&
       widget.secondsToNewYear > 0;
 

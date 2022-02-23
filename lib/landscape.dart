@@ -6,8 +6,8 @@ import 'package:get/get.dart';
 
 import 'messages.dart';
 
-class Landscape extends StatelessWidget {
-  Landscape({
+class Landscape extends StatefulWidget {
+  const Landscape({
     Key? key,
     required this.mode,
     this.fireworks = const SizedBox(),
@@ -24,12 +24,17 @@ class Landscape extends StatelessWidget {
   final String year;
 
   @override
+  State<Landscape> createState() => _LandscapeState();
+}
+
+class _LandscapeState extends State<Landscape> {
+  @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         _buildSky(),
         _buildStars(),
-        fireworks,
+        widget.fireworks,
         _buildMountains(),
         _buildMountainsFlash(),
         _buildText(),
@@ -66,9 +71,9 @@ class Landscape extends StatelessWidget {
 
   Widget _buildSky() {
     return AnimatedSwitcher(
-      duration: switchModeDuration,
+      duration: Landscape.switchModeDuration,
       child: DecoratedBox(
-        key: ValueKey(mode),
+        key: ValueKey(widget.mode),
         decoration: BoxDecoration(
           gradient: _buildGradient(),
         ),
@@ -78,7 +83,7 @@ class Landscape extends StatelessWidget {
   }
 
   LinearGradient _buildGradient() {
-    switch (mode) {
+    switch (widget.mode) {
       case EnvironmentMode.morning:
         return morningGradient;
       case EnvironmentMode.afternoon:
@@ -91,7 +96,7 @@ class Landscape extends StatelessWidget {
   }
 
   Widget _buildStars() {
-    return mode == EnvironmentMode.night
+    return widget.mode == EnvironmentMode.night
         ? Positioned(
             left: 0,
             right: 0,
@@ -106,7 +111,7 @@ class Landscape extends StatelessWidget {
 
   Widget _buildMountains() {
     String mountainsImagePath = '';
-    switch (mode) {
+    switch (widget.mode) {
       case EnvironmentMode.morning:
         mountainsImagePath = 'assets/mountains_morning.png';
         break;
@@ -126,10 +131,10 @@ class Landscape extends StatelessWidget {
       right: 0,
       bottom: 0,
       child: AnimatedSwitcher(
-        duration: switchModeDuration,
+        duration: Landscape.switchModeDuration,
         child: Image.asset(
           mountainsImagePath,
-          key: ValueKey(mode),
+          key: ValueKey(widget.mode),
           fit: BoxFit.cover,
         ),
       ),
@@ -142,7 +147,7 @@ class Landscape extends StatelessWidget {
       right: 0,
       bottom: 0,
       child: Opacity(
-        opacity: flashPercent,
+        opacity: widget.flashPercent,
         child: Image.asset(
           'assets/mountains_night_flash.png',
           fit: BoxFit.cover,
@@ -160,7 +165,7 @@ class Landscape extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            year,
+            widget.year,
             textAlign: TextAlign.center,
             style: TextStyle(
               color:
@@ -170,7 +175,7 @@ class Landscape extends StatelessWidget {
             ),
           ),
           Text(
-            time,
+            widget.time,
             textAlign: TextAlign.center,
             style: TextStyle(
               color:
@@ -184,18 +189,6 @@ class Landscape extends StatelessWidget {
     );
   }
 
-  Color _buildTextColor() {
-    switch (mode) {
-      case EnvironmentMode.morning:
-        return morningTextColor;
-      case EnvironmentMode.afternoon:
-        return afternoonTextColor;
-      case EnvironmentMode.evening:
-        return eveningTextColor;
-      case EnvironmentMode.night:
-        return nightTextColor;
-    }
-  }
 }
 
 const morningGradient = LinearGradient(

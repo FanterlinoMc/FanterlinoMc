@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/route_manager.dart';
 
 class ClassSA extends StatefulWidget {
   const ClassSA({Key? key}) : super(key: key);
@@ -17,12 +16,6 @@ class _ClassSAState extends State<ClassSA> {
     double? h;
     double? w;
     _fanter() {
-      @override
-      void initState() {
-        h = 100;
-        w = 100;
-        super.initState();
-      }
     }
 
     return Scaffold(
@@ -49,11 +42,11 @@ class _ClassSAState extends State<ClassSA> {
             onPressed: () {
               _fanter();
             },
-            child: Text("Works"),
+            child: const Text("Works"),
           ),
 
           AnimatedContainer(
-            duration: Duration(milliseconds: 1000),
+            duration: const Duration(milliseconds: 1000),
             color: Colors.brown,
             height: h,
             width: w,

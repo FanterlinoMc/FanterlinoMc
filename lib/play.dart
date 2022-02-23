@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 import 'main.dart';
 
 class Num extends StatefulWidget {
-  Num({Key? key}) : super(key: key);
+  const Num({Key? key}) : super(key: key);
 
   @override
   _NumState createState() => _NumState();

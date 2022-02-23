@@ -20,7 +20,7 @@ class Sandy extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Num(),
+      home: const Num(),
       // NewYearsCountdownScreen(
       //   overrideStartDateTime: DateTime.parse('0019-12-31 23:59:49'),
       //   doTick: true,

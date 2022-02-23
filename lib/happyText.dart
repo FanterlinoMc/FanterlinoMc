@@ -1,3 +1,4 @@
+// ignore_for_file: file_names
 import 'dart:math';
 
 import 'package:assets_audio_player/assets_audio_player.dart';
@@ -9,6 +10,7 @@ class HappyNewYearText extends StatefulWidget {
     this.secondsToNewYear,
   }) : super(key: key);
 
+  // ignore: prefer_typing_uninitialized_variables
   final secondsToNewYear;
 
   @override

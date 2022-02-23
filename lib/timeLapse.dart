@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
@@ -27,6 +29,7 @@ class _TimeLapseState extends State<TimeLapse>
   void initState() {
     super.initState();
 
+    // ignore: unnecessary_null_comparison
     if (widget.overrideStartDateTime != null) {
       _initialTime = widget.overrideStartDateTime;
     } else {
@@ -45,6 +48,7 @@ class _TimeLapseState extends State<TimeLapse>
     super.didUpdateWidget(oldWidget);
 
     if (widget.overrideStartDateTime != oldWidget.overrideStartDateTime) {
+      // ignore: unnecessary_null_comparison
       if (widget.overrideStartDateTime == null) {
         _initialTime = DateTime.now();
       } else {
@@ -72,9 +76,7 @@ class _TimeLapseState extends State<TimeLapse>
   }
 
   void _onTick(Duration elapsedTime) {
-    if (_initialTime == null) {
-      _initialTime = DateTime.now();
-    }
+    _initialTime;
 
     final newTime = _initialTime.add(elapsedTime);
     if (newTime.second != _currentTime.second) {
