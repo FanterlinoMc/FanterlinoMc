@@ -20,7 +20,7 @@ A cross‑platform Flutter marketplace that empowers local businesses with insta
 - 📝 **Reviews & Ratings:** Let customers share feedback.  
 - 📦 **Order Workflow:** Place orders, track status, and message vendors.
 
-🔗 **Live Demo:** https://fanterlino-101.web.app  
+🔗 **Live Demo:** https://clowdstores-101.web.app 
 
 ---
 
