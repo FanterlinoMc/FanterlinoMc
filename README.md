@@ -1,6 +1,6 @@
 # 🛠️ Fanterlino Damai — Developer Profile & Project README
 
-**📍 Cairo, Egypt** • **✉️ fanterlinomc@gmail.com** • **🔗 [Portfolio](https://fanterlino-101.web.app)** • **🔗 [LinkedIn](https://linkedin.com/in/fanterlino-damai)**
+**📍 Cairo, Egypt** • **✉️ fanterlinomc@gmail.com** • **🔗 • **🔗 [LinkedIn](https://linkedin.com/in/fanterlino-damai)**
 
 ---
 
